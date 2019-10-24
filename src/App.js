@@ -1,24 +1,52 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Editor from './components/Editor/Editor';
+import Freezer from 'freezer-js';
 
 function App() {
+  var data = {
+    "id": 1,
+    "name": "Loadshare Networks",
+    "isActive": true,
+    "contactDetails": {
+      "mobile": 9999999999,
+      "email": "hr@loadshare.net"
+    },
+    "branches": [
+      "Bangalore",
+      "Guwahati",
+      "Delhi"
+    ],
+    "customers": [
+      {
+        "name": "Flipkart",
+        "active": true,
+        "services": [
+          "LINE_HUAL",
+          "LAST_MILE"
+        ]
+      },
+      {
+        "name": "Swiggy",
+        "active": true,
+        "services": [
+          "HYPER_LOCAL"
+        ]
+      },
+      {
+        "name": "Paytm",
+        "active": true,
+        "services": [
+          "FIRST_MILE",
+          "LINE_HUAL"
+        ]
+      }
+    ]
+  };
+  const fr = new Freezer({json: data});
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Editor data={fr.get()} />
     </div>
   );
 }
