@@ -64,7 +64,7 @@ class NumberSchema extends Component {
 
     render() {
         if(!this.state.editing) {
-            return <span onClick={ this.setEditMode } >{ this.props.data }</span>;
+            return <span onClick={ this.setEditMode } className='numberSchema'>{ this.props.data }</span>;
         }
 
         return <input type="number" value={ this.state.data } onChange={ this.updateValue } onBlur={ this.setValue } ref={(ref) => this.input = ref} onKeyDown={this.handleKeyDown} />;

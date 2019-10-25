@@ -63,7 +63,7 @@ class StringSchema extends Component {
 
     render() {
         if(!this.state.editing) {
-            return <span onClick={ this.setEditMode } >{ this.props.data }</span>;
+            return <span onClick={ this.setEditMode } className="stringSchema" >{ this.props.data }</span>;
         }
 
         return <input value={ this.state.data } onChange={ this.updateValue } onBlur={ this.setValue } ref={(ref) => this.input = ref} onKeyDown={this.handleKeyDown} />;

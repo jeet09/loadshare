@@ -61,7 +61,15 @@ class BooleanSchema extends Component {
 
         return (
             <>
-                <input type="checkbox" name={this.props.elKey} value={ this.state.data } checked={this.state.data} onChange={ this.updateValue } ref={(ref) => this.input = ref}  /> 
+                <input 
+                    type="checkbox" 
+                    name={this.props.elKey} 
+                    value={ this.state.data } 
+                    checked={this.state.data} 
+                    onChange={ this.updateValue } 
+                    ref={(ref) => this.input = ref}
+                    style={{cursor: 'pointer'}}
+                /> 
                 {this.state.data.toString()}
             </>
         )

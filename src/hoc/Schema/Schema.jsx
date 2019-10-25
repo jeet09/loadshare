@@ -22,16 +22,13 @@ const schema = (data, parent, elKey) => {
 
             if( value instanceof Array )
                 return 'array';
-
-            if( value instanceof Date)
-                return 'date';
-
+          
             return 'object';
         }
         
         let WrappedSchema = StringSchema;
         const type = checkType(data);
-        console.log("type", type)
+        
         if(type === 'object') {
             WrappedSchema = RootObject;
         } else if(type === 'array') {

@@ -19,7 +19,7 @@ class Editor extends Component {
     render() {        
 
         return (
-            <div className='Editor'>
+            <div className='tree'>
                 <pre>{ JSON.stringify( this.state.data, null, 2)}</pre>
                 <RootObject data={this.state.value} />
             </div>

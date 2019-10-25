@@ -1,8 +1,8 @@
-.App {
+/* .App {
   text-align: center;
-}
+} */
 
-.App-logo {
+/* .App-logo {
   height: 40vmin;
 }
 
@@ -19,4 +19,40 @@
 
 .App-link {
   color: #09d3ac;
+} */
+.elChildren {
+  margin-left: 20px;
+  display: none;
+  font-weight: normal;
+  border-left: 1px dotted #ddd;
 }
+
+
+
+.toggleObject:before {
+  content: '▸';
+  color: #333;
+  line-height: 1em;
+  margin-right: 3px;
+}
+.expand > .toggleObject:before {
+  content: '▾';
+}
+
+.Objelement.expand > .elChildren {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 3fr));
+    /* grid-gap: 2em; */
+  width: 1px;
+    /* text-align: center;*/
+
+}
+
+.toggleObject, .stringSchema, .numberSchema{
+  cursor: pointer;
+}
+
+.elValue > span.expand > .elChildren {
+  margin-left: -5rem;
+}
+
