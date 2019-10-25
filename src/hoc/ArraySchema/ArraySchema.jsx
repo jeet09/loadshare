@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Element from '../../components/Element/Element';
+import SchemaCreate from '../SchemaCreate/SchemaCreate';
 
 
 class ArraySchema extends Component {
@@ -27,6 +28,7 @@ class ArraySchema extends Component {
         let arrayText = (
             <div className="elChildren">
                 {el}
+                <SchemaCreate elType="element" parent={ this.props.data } attrkey={ keys.length }/>
             </div>
         )
         return (

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Element from '../Element/Element';
+import SchemaCreate from '../../hoc/SchemaCreate/SchemaCreate';
 
 class RootObject extends Component {
     state = {
@@ -26,6 +27,7 @@ class RootObject extends Component {
 
         const elements = (<div className="elChildren">
          { element }
+         <SchemaCreate elType="element" parent={ this.props.data } attrkey={ keys.length }/>
         
          </div>);
         return (

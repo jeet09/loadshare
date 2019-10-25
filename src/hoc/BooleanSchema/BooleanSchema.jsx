@@ -32,9 +32,9 @@ class BooleanSchema extends Component {
     componentDidMount() {
 		if( this.state.editing ){
 			
-			var node = this.refs.input.getDOMNode();
-			node.focus();
-			node.value = node.value;
+			var node = this.refs.input;
+			// node.focus();
+			node = node;
 		}
 	}
     
