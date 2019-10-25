@@ -75,7 +75,7 @@ class SchemaCreate extends Component {
 					<option value="array" key={elName+"array"}>Array</option>
 					<option value="object" key={elName+"object"}>Object</option>
 				</select>
-				<button onClick={ this.createAttribute }>OK</button>,
+				<button onClick={ this.createAttribute }>Create</button>
 				<a href="#" className="canElement" onClick={ this.handleCancel }>Cancel</a>
 		</div>);
     }
