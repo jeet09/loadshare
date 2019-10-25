@@ -37,7 +37,10 @@ class Editor extends Component {
 
         return (
             <div className='tree'>
-                
+                <div class="title">
+                    <h3>User Interface</h3>
+                    <hr />
+                </div>
                 <pre>
                     { JSON.stringify( this.state.data, null, 2)}
                 </pre>                    

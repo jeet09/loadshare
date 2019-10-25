@@ -9,9 +9,11 @@ pre {
     position: sticky;
     top: 0;
 }
-.json-file {
-    position: relative;
+
+.title {
+	text-align: center;
 }
+
 
 .download-btn {
     float: right;
