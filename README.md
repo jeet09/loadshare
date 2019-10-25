@@ -1,6 +1,7 @@
 ### Features
 
 - Given JSON file one can Add/edit/delete fields.
+- To Edit particular fields, click on Values and one can edit the value.
 - Once update is done there is option for download.
 - Fields supported are Object/Array/String/Number/Boolean.
 
