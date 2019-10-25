@@ -14,7 +14,7 @@
     display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(10ch, 1fr));	 
     grid-gap: 0;
-    width: 61%;
+    width: 81%;
     margin-top: 10px;
     
 
@@ -22,11 +22,15 @@
 
 .els .elName {
     grid-column-start: 1;
-    font-weight: 500;
+    font-weight: 400;
 
 }
 
 .els .elValue {
     grid-column-start: span 2;
-    font-weight: bold;
+    font-weight: 600;
+}
+
+.els .elRemove {
+    grid-column-start: span 2;    
 }

@@ -44,8 +44,7 @@ class NumberSchema extends Component {
     
     setValue() {
 		if( this.state.modified )
-			this.props.parent.set( this.props.elKey, Number(this.state.data) );
-		console.log(this.props.parent, this.state.data)
+			this.props.parent.set( this.props.elKey, Number(this.state.data) );		
 		this.setState({editing: false});
 	}
 

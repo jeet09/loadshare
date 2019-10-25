@@ -6,9 +6,10 @@ class StringKeySchema extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			editing: !this.props.data,
+			editing: !this.props.elKey,
 			data: this.props.data,
-			modified: false
+			modified: false,
+			elKey: this.props.elKey
 		}
 
 		this.toggleEditing = this.toggleEditing.bind(this);
@@ -44,14 +45,20 @@ class StringKeySchema extends Component {
     }
     
     setValue() {
-		if( this.state.modified )
-            this.props.parent.set( this.props.elKey, this.state.data );
+		if( this.state.modified ) {
+			console.log("elkey", this.props.elKey)			
+			this.props.parent.set( this.state.elKey, this.props.data );
+			this.props.parent.remove(this.props.elKey);
+		}
+            
             // this.props.parent.set( this.state.data, this.props.elKey );
         
 		this.setState({editing: false});
 	}
 
 	updateValue(e) {
+		console.log("ekey", e.target.value);
+		console.log("modified", e.target.value != this.props.elKey);
 		this.setState({elKey: e.target.value, modified: e.target.value != this.props.elKey });
 	}
 
@@ -65,10 +72,10 @@ class StringKeySchema extends Component {
 
     render() {
         if(!this.state.editing) {
-            return <span onClick={ this.setEditMode } >{ this.props.data }</span>;
+            return <span onClick={ this.setEditMode } >{ this.props.elKey }</span>;
         }
 
-        return <input value={ this.state.data } onChange={ this.updateValue } onBlur={ this.setValue } ref={(ref) => this.labelInput = ref} onKeyDown={this.handleKeyDown} />;
+        return <input value={ this.state.elKey } onChange={ this.updateValue } onBlur={ this.setValue } ref={(ref) => this.labelInput = ref} onKeyDown={this.handleKeyDown} />;
 	    
     }
 }

@@ -14,9 +14,9 @@ pre {
 }
 
 .download-btn {
-    position: absolute;
-    top: 39rem;
-    left: 1rem;
+    float: right;
+    margin-top: 10px;
+    margin-right: 20rem;
 }
 
 .button-success {

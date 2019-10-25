@@ -37,13 +37,12 @@ class Editor extends Component {
 
         return (
             <div className='tree'>
-                <div className="json-file">
-                    <pre>
-                        { JSON.stringify( this.state.data, null, 2)}
-                    </pre>
-                    <button onClick={this.download} className='download-btn button-success'>Download</button> 
-                </div>
-                               
+                
+                <pre>
+                    { JSON.stringify( this.state.data, null, 2)}
+                </pre>                    
+                
+                <button onClick={this.download} className='download-btn button-success'>Download</button>      
                 <RootObject data={this.state.value} />
             </div>
         )

@@ -6,8 +6,8 @@ import ArraySchema from '../ArraySchema/ArraySchema';
 import NumberSchema from '../NumberSchema/NumberSchema';
 import BooleanSchema from '../BooleanSchema/BooleanSchema';
 
-const schema = (data, parent, elKey) => {
-    
+const schema = (data, parent, elKey, ctype='value') => {
+        
         const checkType = (value) => {
             let type = typeof value;
 
@@ -38,6 +38,10 @@ const schema = (data, parent, elKey) => {
         } else if(type === 'boolean') {
             WrappedSchema = BooleanSchema;
         }
+
+        // if(ctype == 'key') {
+        //     WrappedSchema = StringKeySchema;
+        // }
 
         // const WrappedSchema = type='value' ? StringSchema : StringKeySchema;
 
